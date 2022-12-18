@@ -55,11 +55,11 @@ public class UserClient extends Client {
     }
 
     @Step("Attempt to change user information wothout authorization")
-    public ValidatableResponse patchWithoutAuth(Credentials credentials){
+    public ValidatableResponse patchWithoutAuth(EmailAndName emailAndName){
         return  given()
                 .spec(getSpec())
                 .when()
-                .body(credentials)
+                .body(emailAndName)
                 .patch(USER_PATH)
                 .then();
     }

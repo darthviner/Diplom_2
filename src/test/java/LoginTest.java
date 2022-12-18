@@ -36,7 +36,7 @@ public class LoginTest {
         ValidatableResponse response = userClient.login(credentials);
         Assert.assertEquals("Unsuccessful login",200,response.extract().statusCode());
         accessToken = response.extract().path("accessToken");
-        accessToken = accessToken.replaceFirst("Bearer","");
+        accessToken = accessToken.replaceFirst("Bearer ","");
     }
 
     @Test
